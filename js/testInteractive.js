@@ -1,7 +1,7 @@
 var input = {
     mouseX: {
         start: 100,
-        end: window.innerWidth,
+        end: window.innerWidth - 200,
         current:0,
     },
     mouseY: {}
@@ -12,10 +12,19 @@ input.mouseX.range = input.mouseX.end - input.mouseX.start;
 var handleMouseMove = function(event) {
     input.mouseX.current = event.clientX;
     input.mouseX.fraction = (input.mouseX.current - input.mouseX.start) / input.mouseX.range;
+
+    if(input.mouseX.fraction > 1) {
+        input.mouseX.fraction = 1;
+    }
+    if(input.mouseX.fraction < 0) {
+        input.mouseX.fraction = 0;
+    }
+    
     console.log("fraction", input.mouseX.fraction)
 }
+
 var handleResize = function() {
-    input.mouseX.end = window.innerWidth;
+    input.mouseX.end = window.innerWidth - 200;
     input.mouseX.range = input.mouseX.end - input.mouseX.start;
 }
 

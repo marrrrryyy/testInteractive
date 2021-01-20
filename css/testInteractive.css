@@ -1,0 +1,14 @@
+.block {
+    background-color: #95ADFF;
+    width: 100px;
+    height: 100vh;
+}
+
+.block2{
+    background-color: #95ADFF;
+    width: 200px;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
